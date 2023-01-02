@@ -182,6 +182,8 @@ def is_identical_tree(root1, root2):
         return True
 
     if root1 and root2 and root1.data == root2.data:
-        return is_identical_tree(root1.left, root2.left) and is_identical_tree(root1.right, root2.right)
+        return is_identical_tree(root1.left, root2.left) and is_identical_tree(
+            root1.right, root2.right
+        )
 
     return False
