@@ -5,21 +5,21 @@ from Algorithms.Trees.base import create_bst
 
 def traverse(root):
     result = []
-    from statistics import mean
     from collections import deque
     queue = deque()
     queue.append(root)
     while queue:
-        cur_level = []
-        for _ in range(len(queue)):
+        sum_level = 0
+        level_len = len(queue)
+        for _ in range(level_len):
             el = queue.popleft()
-            cur_level.append(el.data)
+            sum_level += el.data
             if el.left:
                 queue.append(el.left)
             if el.right:
                 queue.append(el.right)
 
-        result.append(mean(cur_level))
+        result.append(sum_level / level_len)
 
     return result
 
