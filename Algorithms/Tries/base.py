@@ -32,6 +32,19 @@ class Trie:
         print("'" + key + "' inserted")
 
     def search(self, key):
+        if key is None:
+            return False
+        key = key.lower()
+        current = self.root
+        for letter in key:
+            index = self.get_index(letter)
+            if current.children[index] is None:
+                return False
+            current = current.children[index]
+
+        if current is not None and current.is_end_word:
+            return True
+
         return False
 
     def delete(self, key):
@@ -46,3 +59,8 @@ print("Keys to insert:\n", keys)
 
 for words in keys:
     t.insert(words)
+
+res = ["Not present in trie", "Present in trie"]
+print("the --- " + res[1] if t.search("the") else "the --- " + res[0])
+print("these --- " + res[1] if t.search("these") else "these --- " + res[0])
+print("abc --- " + res[1] if t.search("abc") else "abc --- " + res[0])
