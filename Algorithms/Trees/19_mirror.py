@@ -1,4 +1,4 @@
-from Algorithms.Trees.base import display_level_order, create_bst
+from Algorithms.Trees.base import create_bst, display_level_order
 
 
 def mirror_tree(root):
