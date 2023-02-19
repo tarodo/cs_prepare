@@ -11,7 +11,11 @@ def find_paths_recursive(current_node, required_sum, current_path, all_paths):
 
     current_path.append(current_node.val)
 
-    if current_node.val == required_sum and not current_node.left and not current_node.right:
+    if (
+        current_node.val == required_sum
+        and not current_node.left
+        and not current_node.right
+    ):
         all_paths.append(list(current_path))
     else:
         new_sum = required_sum - current_node.val
@@ -35,8 +39,12 @@ def main():
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
     required_sum = 23
-    print("Tree paths with required_sum " + str(required_sum) +
-          ": " + str(find_paths(root, required_sum)))
+    print(
+        "Tree paths with required_sum "
+        + str(required_sum)
+        + ": "
+        + str(find_paths(root, required_sum))
+    )
 
 
 main()
