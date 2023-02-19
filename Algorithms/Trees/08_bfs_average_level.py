@@ -1,11 +1,10 @@
-
-
 from Algorithms.Trees.base import create_bst
 
 
 def traverse(root):
     result = []
     from collections import deque
+
     queue = deque()
     queue.append(root)
     while queue:

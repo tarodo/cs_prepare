@@ -1,7 +1,8 @@
 import pickle
 import sys
 
-from Algorithms.Trees.base import create_bst, display_level_order, BinaryTreeNode
+from Algorithms.Trees.base import (BinaryTreeNode, create_bst,
+                                   display_level_order)
 
 MARKER = sys.maxsize
 
@@ -32,11 +33,11 @@ def deserialize(stream):
 arr = [100, 50, 200, 25, 75, 125, 350]
 root = create_bst(arr)
 display_level_order(root)
-output = open('data.tmp', 'wb')
+output = open("data.tmp", "wb")
 p = pickle.Pickler(output)
 serialize(root, p)
 output.close()
-input2 = open('data.tmp', 'rb')
+input2 = open("data.tmp", "rb")
 root_deserialized = deserialize(input2)
 print("Result:")
 display_level_order(root_deserialized)

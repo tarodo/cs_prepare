@@ -1,5 +1,5 @@
 class TrieNode:
-    def __init__(self, char=''):
+    def __init__(self, char=""):
         self.children = [None] * 26
         self.is_end_word = False
         self.char = char
@@ -10,7 +10,7 @@ class Trie:
         self.root = TrieNode()
 
     def get_index(self, t) -> int:
-        return ord(t) - ord('a')
+        return ord(t) - ord("a")
 
     def insert(self, key):
         if not key:
@@ -51,8 +51,7 @@ class Trie:
         pass
 
 
-keys = ["the", "a", "there", "answer", "any",
-        "by", "bye", "their", "abc"]
+keys = ["the", "a", "there", "answer", "any", "by", "bye", "their", "abc"]
 
 t = Trie()
 print("Keys to insert:\n", keys)

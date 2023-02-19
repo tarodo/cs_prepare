@@ -13,7 +13,7 @@ class TreeNode:
             current = nextLevelRoot
             nextLevelRoot = None
             while current:
-                print(str(current.val) + " ", end='')
+                print(str(current.val) + " ", end="")
                 if not nextLevelRoot:
                     if current.left:
                         nextLevelRoot = current.left

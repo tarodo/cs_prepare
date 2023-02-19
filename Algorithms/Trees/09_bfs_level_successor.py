@@ -1,5 +1,6 @@
-from Algorithms.Trees.base import create_bst
 from collections import deque
+
+from Algorithms.Trees.base import create_bst
 
 
 def find_successor(root, key):

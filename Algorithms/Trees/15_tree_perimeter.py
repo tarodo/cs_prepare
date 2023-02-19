@@ -47,7 +47,7 @@ def display_tree_perimeter(root):
         if root.left or root.right:
             print_leaf_nodes(root, result)
         print_right_perimeter(root.right, result)
-    return ''.join(result)
+    return "".join(result)
 
 
 arr = [100, 50, 200, 25, 60, 350, 10, 70, 400]
