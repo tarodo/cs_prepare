@@ -51,7 +51,6 @@ class MyLinkedList:
         new_el.next_el = next_el
         cur_el.next_el = new_el
 
-
     def deleteAtIndex(self, index: int) -> None:
         if index == 0:
             if self.next_el:
@@ -77,3 +76,48 @@ class MyLinkedList:
 # obj.addAtTail(val)
 # obj.addAtIndex(index,val)
 # obj.deleteAtIndex(index)
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+    def get(self, index: int):
+        el = self
+        for idx in range(index):
+            if el.next:
+                el = el.next
+            else:
+                return None
+        return el
+
+
+
+def upload_list(elements):
+    node = prev_node = None
+    for el in elements[::-1]:
+        node = ListNode(el)
+        if prev_node:
+            node.next = prev_node
+        prev_node = node
+    return node
+
+
+def connect_loop_list(head_node, el):
+    tail_node = head_node
+    while tail_node.next:
+        tail_node = tail_node.next
+
+    con_node = head_node
+    for i in range(el):
+        con_node = head_node.next
+
+    tail_node.next = con_node
+    return head_node
+
+
+def connect_two_lists(node_a: ListNode, node_b: ListNode):
+    cur_b = node_b
+    while cur_b.next:
+        cur_b = cur_b.next
+    cur_b.next = node_a
