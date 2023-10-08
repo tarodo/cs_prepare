@@ -78,9 +78,9 @@ class MyLinkedList:
 # obj.deleteAtIndex(index)
 
 class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+    def __init__(self, val, next_el=None):
+        self.val = val
+        self.next = next_el
 
     def get(self, index: int):
         el = self
@@ -91,7 +91,8 @@ class ListNode:
                 return None
         return el
 
-
+    def __str__(self):
+        return str(self.val)
 
 def upload_list(elements):
     node = prev_node = None
