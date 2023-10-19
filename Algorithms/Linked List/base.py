@@ -1,3 +1,6 @@
+from typing import Optional
+
+
 class MyLinkedList:
 
     def __init__(self):
@@ -122,3 +125,13 @@ def connect_two_lists(node_a: ListNode, node_b: ListNode):
     while cur_b.next:
         cur_b = cur_b.next
     cur_b.next = node_a
+
+
+def print_linked_list(head: Optional[ListNode]):
+    if not head:
+        print("empty")
+    result = []
+    while head:
+        result.append(str(head.val))
+        head = head.next
+    print(", ".join(result))
